@@ -7,7 +7,8 @@ app.set('view engine', 'ejs');
 
 // use res.render to load up an ejs view file
 
-// index page 
+// index page
+app.use(express.static('public'));
 app.get('/', function(req, res) {
     var mascots = [
         { name: 'Sammy', organization: "DigitalOcean", birth_year: 2012},
