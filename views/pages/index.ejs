@@ -1,32 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head'); %>
-</head>
-<body class="container">
-
+  </head>
+  <body class="container">
     <header>
-        <%- include('../partials/header'); %>
+      <%- include('../partials/header'); %>
     </header>
-
     <main>
-        <div class="jumbotron">
-            <h1>Top Mascots</h1>
-            <p><%= tagline %></p>
-            <ul>
-                <% mascots.forEach(function(mascot) { %>
-                    <li>
-                        <strong><%= mascot.name %></strong>
-                        representing <%= mascot.organization %>, born <%= mascot.birth_year %>
-                    </li>
-                <% }); %>
-            </ul>
-        </div>
+      <table border="0" cellspacing="4" cellpadding="4" width="450" align="center">
+        <tr>
+	  <td valign="top">
+	    <p>
+	      The land is a big part of me. I grew up on the prairies and
+	      moved North to paint and teach art. I've had several one-man shows,
+	      a two-person show, and been part of three group shows. In the
+	      seventies and eighties, I painted a series of oils and acrylics of
+	      the Dempster Highway from Dawson City to Inuvik. Later in the
+	      eighties, I did a series of pen and inks of Inuvik's
+	      'Drunken Forest'. In the nineties, I've been painting increasingly
+	      abstract landscapes, now using the land around Rae Edzo and
+	      Yellowknife as my inspiration.
+	    </p>
+	    <p>I've spent twenty of the last thirty years teaching art in Inuvik and Rae-Edzo, 
+	      in the NWT. Many of my art students have been Dene, Cree, or Inuit, and have been 
+	      inspired by artists from their own communities, such as Mona Thrasher and Archie 
+	      Beaulieu. So as well as knowing those artists, I've had to become familiar with 
+	      their work to better serve my students. Those northern artistic traditions have 
+	      found their way deep into my work.</p>
+	    <p>
+	      A few months ago, I had a show at the 
+	      <a href="https://web.archive.org/web/20170626103317/http://www.designerden.com/">
+		Designer's Den
+	      </a>
+	      in Yellowknife, and put new images into the '
+	      <a href="https://web.archive.org/web/20170626103317/http://www.wallymurphy.com/sketches/">
+		Sketches
+	      </a>
+	      ' section 
+	      of the website.
+	    </p>
+	    <p>
+	      <a href="https://web.archive.org/web/20170626103317/http://www.wallymurphy.com/cards">
+		  I now have cards available.
+	      </a>
+	      Six images in postcard style, six images in greeting card style. If you're 
+	      interested in my work, you can
+	      <a href="https://web.archive.org/web/20170626103317/http://www.wallymurphy.com/contact">
+		contact
+	      </a>
+	      me.
+	    </p>
+	    <p>
+	      Thank you very much, and I hope you enjoy the work.
+	    </p>
+	    <p>
+	      Wallace Murphy<br>
+	      Osoyoos, BC<br>
+	      September 19, 2002
+	    </p>
+	    <br>
+	  </td>
+	</tr>
+      </table>
     </main>
-
     <footer>
-        <%- include('../partials/footer'); %>
+      <%- include('../partials/footer'); %>
     </footer>
-
 </body>
 </html>
