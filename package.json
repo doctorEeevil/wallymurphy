@@ -1,5 +1,5 @@
 {
-  "name": "node-ejs",
+  "name": "wallymurphy",
   "main": "server.js",
   "dependencies": {
     "ejs": "^3.1.5",
