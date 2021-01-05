@@ -23,9 +23,14 @@ app.get('/', function(req, res) {
     });
 });
 
-// heres the statement page
+// statement page
 app.get('/statement', function(req, res) {
-    res.render('pages/statement');
+  res.render('pages/statement');
+});
+
+// words page
+app.get('/words', function(req, res) {
+  res.render('pages/words');
 });
 
 const PORT = process.env.PORT || 8080;
