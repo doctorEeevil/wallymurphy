@@ -23,10 +23,11 @@ app.get('/', function(req, res) {
     });
 });
 
-// about page
-app.get('/about', function(req, res) {
-    res.render('pages/about');
+// statement page
+app.get('/statement', function(req, res) {
+    res.render('pages/statement');
 });
 
-app.listen(8080);
-console.log('8080 is the magic port');
+const PORT = process.env.PORT || 8080;
+app.listen(PORT);
+console.log(`${PORT} is the magic port`);
