@@ -23,14 +23,22 @@ app.get('/', function(req, res) {
     });
 });
 
-// statement page
-app.get('/statement', function(req, res) {
-  res.render('pages/statement');
-});
-
-// words page
+/* old words page
 app.get('/words', function(req, res) {
   res.render('pages/words');
+});
+*/
+
+// words, contact, and statement pages
+app.get('/:sectionName', function(req, res) { 
+  var pathToTemplate = 'pages/' + req.params.sectionName;
+  res.render(pathToTemplate, req.params);
+});
+
+// cards, and sketches pages
+app.get('/sketches/:sketchId', function(req, res) {
+  var pathToTemplate = 'pages/sketch';
+  res.render(pathToTemplate, req.params);
 });
 
 const PORT = process.env.PORT || 8080;
