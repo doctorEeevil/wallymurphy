@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
     });
 });
 
-// statement page
+// heres the statement page
 app.get('/statement', function(req, res) {
     res.render('pages/statement');
 });
