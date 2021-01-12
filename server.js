@@ -19,13 +19,22 @@ app.get('/words', function(req, res) {
 });
 */
 
+// card detail page
+app.get('/cards/:cardId', function(req, res) {
+  var pathToTemplate = 'pages/card';
+  console.log(req.params);
+  res.render(pathToTemplate, {sectionName: 'cards', cardId: req.params.cardId,
+			      pcList: "PC1 PC2 PC3 PC4 PC5 PC6".split(" "),
+			      tcList: "TC1 TC2 TC3 TC4 TC5 TC6".split(" ")});
+});
+
 // words, contact, and statement pages
 app.get('/:sectionName', function(req, res) { 
   var pathToTemplate = 'pages/' + req.params.sectionName;
   res.render(pathToTemplate, req.params);
 });
 
-// cards, and sketches pages
+// sketches pages
 app.get('/sketches/:sketchId', function(req, res) {
   var pathToTemplate = 'pages/sketch';
   res.render(pathToTemplate, req.params);

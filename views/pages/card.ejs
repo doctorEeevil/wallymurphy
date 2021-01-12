@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <header>
+      <%- include('../partials/header', {sectionName: sectionName}); %>
+    </header>
+    <main>
+      <table border="0" cellspacing="4" cellpadding="4" width="450" align="center">
+	<tr>
+	  <td valign="top">
+	    <div align="center">
+	      <h4><%- cardId %></h4>
+	      <img src="/images/cards/<%- cardId %>.jpg" alt="" title="<%- cardId %>.jpg" height="385" width="250"/>
+	      <br>
+	      <br>
+	      <br>
+	      <p>
+		Back to the
+		<a href="/cards/">
+		  Cards
+		</a>
+		page.
+	      </p>
+	      <p>
+		<% pcList.forEach(function(pc, i, arr){ %>
+		<a href="/cards/<%- pc %>">
+		  <%- pc %>
+		</a> 
+		<% if (i != arr.length - 1){ %>
+		|
+		<% } %>
+		<% }); %>
+		<br><!-- POSTCARDS ABOVE HERE, GREETING CARDS BELOW -->
+		<% tcList.forEach(function(tc, i, arr){ %>
+		<a href="/cards/<%- tc %>">
+		  <%- tc %>
+		</a>
+		<% if (i != arr.length - 1){ %>
+		|
+		<% } %>
+		<% }); %>
+	      </p>
+	    </div>
+	    <br>
+	  </td>
+	</tr>
+      </table>
+    </main>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>
