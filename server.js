@@ -28,6 +28,7 @@ var sketchList = ("a16b a17a a17b a18a a19a a2b a3a " +
 		  "b16b b17a b17b b18b b19a b19b b1b b20a " +
 		  "b20b b21a b23a b2b b3a b3b b4a b4b b4c b5a " +
 		  "b5c b6a b6b b7b b9a b9b").split(" ");
+
 // card detail page
 app.get('/cards/:cardId', function(req, res) {
   var pathToTemplate = 'pages/card';
@@ -38,18 +39,21 @@ app.get('/cards/:cardId', function(req, res) {
   res.render(pathToTemplate, params);
 });
 
+// sketch details page
+app.get('/sketches/:sketchId', function(req, res) {
+  var pathToTemplate = 'pages/sketch';
+  var params = req.params;
+  params.sectionName = 'sketches';
+  params.sketchId = req.params.sketchId;
+  res.render(pathToTemplate, params);
+});
+
 // words, contact, cards, sketches and statement pages
 app.get('/:sectionName', function(req, res) { 
   var pathToTemplate = 'pages/' + req.params.sectionName;
   var params = {pcList, tcList, sketchList};
   params.sectionName = req.params.sectionName;
   res.render(pathToTemplate, params);
-});
-
-// sketch details pages
-app.get('/sketches/:sketchId', function(req, res) {
-  var pathToTemplate = 'pages/sketch';
-  res.render(pathToTemplate, req.params);
 });
 
 const PORT = process.env.PORT || 8080;
