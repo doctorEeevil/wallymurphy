@@ -41,103 +41,41 @@
 	      <tr>
 		<td colspan="3" align="center"><h4>Postcards</h4></td>
 	      </tr>
+	  <% pcList.forEach(function(pc, i, arr){ %>
+	    <% if (i % 3 == 0) { %>
 	      <tr>
-		<td align="center">
-		  <a href="/cards/PC1">
-		    <img src="/images/cards/PC1-sml.jpg" border="0">
+	    <% } %>
+	        <td align="center">
+		  <a href="/cards/<%- pc %>">
+		    <img src="/images/cards/<%- pc %>-sml.jpg" border="0">
 		    <br>
-		    PC1
+		    <%- pc %>
 		  </a>
 		</td>
-		<td align="center">
-		  <a href="/cards/PC2">
-		    <img src="/images/cards/PC2-sml.jpg" border="0">
-		    <br>
-		    PC2
-		  </a>
-		</td>
-		<td align="center">
-		  <a href="/cards/PC3">
-		    <img src="/images/cards/PC3-sml.jpg" border="0">
-		    <br>
-		    PC3
-		  </a>
-		</td>
+	    <% if (i % 3 == 2) { %>
 	      </tr>
-	      <tr> 
-		<td align="center">
-		  <a href="/cards/PC4">
-		    <img src="/images/cards/PC4-sml.jpg" border="0">
-		    <br>
-		    PC4
-		  </a>
-		</td>
-		<td align="center">
-		  <a href="/cards/PC5">
-		    <img src="/images/cards/PC5-sml.jpg" border="0">
-		    <br>
-		    PC5
-		  </a>
-		</td>
-		<td align="center">
-		  <a href="/cards/PC6">
-		    <img src="/images/cards/PC6-sml.jpg" border="0">
-		    <br>
-		    PC6
-		  </a>
-		</td>
-	      </tr>
+	    <% } %>
+	  <% }); %>
 	    </table>
 	    <table border="0" cellpadding="4" cellspacing="4" width="90%" align="center">
 	      <tr>
 		<td colspan="3" align="center"><h4>Greeting Cards</h4></td>
 	      </tr>
+	      <% tcList.forEach(function(tc, i, arr){ %>
+	    <% if (i % 3 == 0) { %>
 	      <tr>
-		<td align="center">
-		  <a href="/cards/TC1">
-		    <img src="/images/cards/TC1-sml.jpg" border="0">
+	    <% } %>
+	        <td align="center">
+		  <a href="/cards/<%- tc %>">
+		    <img src="/images/cards/<%- tc %>-sml.jpg" border="0">
 		    <br>
-		    TC1
+		    <%- tc %>
 		  </a>
 		</td>
-		<td align="center">
-		  <a href="/cards/TC2">
-		    <img src="/images/cards/TC2-sml.jpg" border="0">
-		    <br>
-		    TC2
-		  </a>
-		</td>
-		<td align="center">
-		  <a href="/cards/TC3">
-		    <img src="/images/cards/TC3-sml.jpg" border="0">
-		    <br>
-		    TC3
-		  </a>
-		</td>
+	    <% if (i % 3 == 2) { %>
 	      </tr>
-	      <tr>
-		<td align="center">
-		  <a href="/cards/TC4">
-		    <img src="/images/cards/TC4-sml.jpg" border="0">
-		    <br>
-		    TC4
-		  </a>
-		</td>
-		<td align="center">
-		  <a href="/cards/TC5">
-		    <img src="/images/cards/TC5-sml.jpg" border="0">
-		    <br>
-		    TC5
-		  </a>
-		</td>
-		<td align="center">
-		  <a href="/cards/TC6">
-		    <img src="/images/cards/TC6-sml.jpg" border="0">
-		    <br>
-		    TC6
-		  </a>
-		</td>
-	      </tr>
+	    <% } %>
+	  <% }); %>
 	    </table>
 	    <br>
 	  </td>

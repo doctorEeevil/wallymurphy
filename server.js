@@ -19,19 +19,26 @@ app.get('/words', function(req, res) {
 });
 */
 
+// cards list object
+var pcList = "PC1 PC2 PC3 PC4 PC5 PC6".split(" ");
+var tcList = "TC1 TC2 TC3 TC4 TC5 TC6".split(" ");
+
 // card detail page
 app.get('/cards/:cardId', function(req, res) {
   var pathToTemplate = 'pages/card';
   console.log(req.params);
-  res.render(pathToTemplate, {sectionName: 'cards', cardId: req.params.cardId,
-			      pcList: "PC1 PC2 PC3 PC4 PC5 PC6".split(" "),
-			      tcList: "TC1 TC2 TC3 TC4 TC5 TC6".split(" ")});
+  var params = {pcList, tcList};
+  params.sectionName = 'cards';
+  params.cardId = req.params.cardId;
+  res.render(pathToTemplate, params);
 });
 
-// words, contact, and statement pages
+// words, contact, cards, and statement pages
 app.get('/:sectionName', function(req, res) { 
   var pathToTemplate = 'pages/' + req.params.sectionName;
-  res.render(pathToTemplate, req.params);
+  var params = {pcList, tcList};
+  params.sectionName = req.params.sectionName;
+  res.render(pathToTemplate, params);
 });
 
 // sketches pages
