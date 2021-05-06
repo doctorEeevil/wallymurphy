@@ -15,6 +15,8 @@ app.set('view engine', 'ejs');
 // We put the redirects first so they get handled before typical processing
 redir('/cards',
       "https://www.etsy.com/shop/WallyMurphyArt?section_id=33884753");
+redir('/contact',
+      "https://www.etsy.com/messages/new?with_id=441040200&referring_id=27746557&referring_type=shop&recipient_id=441040200");
 
 // serve all urls like /WHAT/EVER from file paths like public/WHAT/EVER
 app.use(express.static('public'));
