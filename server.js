@@ -2,22 +2,27 @@
 var express = require('express');
 var app = express();
 
+function redir(fromPath, toURL, status=307) {
+  app.use(fromPath,
+          (req, res) => {res.redirect(status, toURL)});
+}
+
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
 // use res.render to load up an ejs view file
 
-// index page
+// We put the redirects first so they get handled before typical processing
+redir('/cards',
+      "https://www.etsy.com/shop/WallyMurphyArt?section_id=33884753");
+
+// serve all urls like /WHAT/EVER from file paths like public/WHAT/EVER
 app.use(express.static('public'));
+
+// index page
 app.get('/', function(req, res) {
   res.render('pages/index', {sectionName: 'home'});
 });
-
-/* old words page
-app.get('/words', function(req, res) {
-  res.render('pages/words');
-});
-*/
 
 // cards and sketches list objects
 var pcList = "PC1 PC2 PC3 PC4 PC5 PC6".split(" ");
@@ -49,7 +54,7 @@ app.get('/sketches/:sketchId', function(req, res) {
 });
 
 // words, contact, cards, sketches and statement pages
-app.get('/:sectionName', function(req, res) { 
+app.get('/:sectionName', function(req, res) {
   var pathToTemplate = 'pages/' + req.params.sectionName;
   var params = {pcList, tcList, sketchList};
   params.sectionName = req.params.sectionName;
